@@ -1,20 +1,52 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content >
+  <div id="principal">
+    <h1>Clinica Veterinaria Kuarahy</h1>
+    <div id="menu">
+      <div class="form">
+        
+        <h2>Control de vacunas</h2>
+          <div class="texthijo">
+            <p>Cliente</p>
+            <ion-list>
+              <ion-item>
+                <ion-select placeholder="Seleccione el cliente" (ionChange)="getMascotasByClient(idcliente)" [(ngModel)]="idcliente">
+                  <ion-select-option *ngFor="let c of clientes"  value={{c?.ClienteID}} >{{c?.NombreApelllido}} </ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </div>
+          <div class="texthijo">
+            <p>Mascota</p>
+            <ion-list>
+              <ion-item>
+                <ion-select placeholder="Seleccione la mascota" (ionChange)="getVacunasByMascotaSelected(idmascota)" [(ngModel)]="idmascota" *ngIf="prueba"  >
+                  <ion-select-option *ngFor="let m of mascotas"  value={{m.MascotaID}} >{{m.Nombre}} </ion-select-option>
+                </ion-select>
+              </ion-item>
+          </ion-list>
+          </div>
+      </div>
+      
+      <button (click)="changeMascota()">Ver historial</button>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+    </div >
+
+    <ion-grid class="ion-margin" *ngIf="vacuna">
+      <ion-row class="headers">
+        <ion-col>Fecha de vacunacion</ion-col>
+        <ion-col>Vacuna</ion-col>
+        <ion-col>Costo</ion-col>
+      </ion-row>
+      <ion-row *ngFor="let vacuna of Vmascotas" id="datos">
+        <ion-col>{{ vacuna.FechaVacunacion }}</ion-col>
+        <ion-col>{{ vacuna.vacuna }}</ion-col>
+        <ion-col>{{ vacuna.costo }}</ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    </div>
+    
+  
 </ion-content>

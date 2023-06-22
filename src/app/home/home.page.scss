@@ -1,27 +1,123 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#container a {
-  text-decoration: none;
+h1 {
+  margin: 0;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 2.0rem;
+
+}
+
+
+.form {
+
+  display: grid;
+  grid-template-columns: 1fr;
+  font-size: 1.3rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+}
+
+.texthijo {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+
+  p {
+    margin: 15px 0;
+  }
+
+  ion-list {
+    position: absolute;
+    left: 80px;
+
+    ion-select {
+      width: 200px;
+      background-color: white;
+
+      ion-select-option {
+
+        color: white;
+      }
+    }
+  }
+}
+
+#menu {
+  width: 90%;
+  margin: 0 auto;
+  background-color: white;
+  color: #004861;
+  padding: 10px 5px;
+  border-radius: 3px;
+}
+
+#principal {
+  width: 100%;
+  height: 100vh;
+  font-family: poppins;
+  color: white;
+  background-color: #01a3c8;
+}
+
+
+;
+
+
+.ion-margin {
+  width: 90%;
+  margin: 10px auto;
+
+  .headers ion-col {
+    background-color: #004861;
+    color: white;
+    border: 1px solid #5d94c3;
+    border-bottom: none;
+    padding: 5px;
+  }
+
+  #datos ion-col {
+    margin: 0;
+    padding: 5px 0 5px 5px;
+    background-color: white;
+    color: #01a3c8;
+    font-size: 1.2rem;
+    width: 33%;
+    border-bottom: 1px solid #01a3c8;
+  }
+
+
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0;
+}
+
+p {
+  display: inline-block;
+}
+
+ion-list {
+  display: inline-block;
+}
+
+button {
+  display: flex;
+  margin: 10px auto;
+  padding: 10px;
+  width: 60%vw;
+  background-color: #004861;
+  color: white;
+  font-size: 1.1rem;
 }
